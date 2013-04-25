@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: bitcoinmarket_dev
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: bitcoinmarket_test
+  pool: 5
+  username: root
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: bitcoinmarket_prod
+  pool: 5
+  username: root
+  password:
