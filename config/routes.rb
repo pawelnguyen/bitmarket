@@ -3,6 +3,7 @@ BitcoinMarket::Application.routes.draw do
 
   resources :offers
   resource :wallet
+  resource :dashboard
 
-  root :to => 'offers#index'
+  root :to => 'dashboard#index'
 end
