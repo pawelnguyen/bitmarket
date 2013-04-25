@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425125544) do
-
-  create_table "offers", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-
-ActiveRecord::Schema.define(:version => 20130425122335) do
+ActiveRecord::Schema.define(:version => 20130425130948) do
 
   create_table "funds", :force => true do |t|
     t.decimal  "balance",     :precision => 8, :scale => 2, :default => 0.0
@@ -25,6 +19,12 @@ ActiveRecord::Schema.define(:version => 20130425122335) do
     t.string   "description"
     t.datetime "created_at",                                                 :null => false
     t.datetime "updated_at",                                                 :null => false
+  end
+
+  create_table "offers", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "fund_id",    :null => false
   end
 
   create_table "users", :force => true do |t|
