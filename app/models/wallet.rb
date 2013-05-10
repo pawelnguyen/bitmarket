@@ -3,4 +3,6 @@ class Wallet < ActiveRecord::Base
 
   belongs_to :user
   has_many :funds, dependent: :destroy
+  has_one :bitcoins, class_name: 'Fund', conditions: { fund_type: Fund::BITCOINS }
+
 end

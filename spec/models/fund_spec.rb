@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Fund do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'responds to fund_type' do
+    subject.should respond_to :fund_type
+  end
 end

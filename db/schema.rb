@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425130948) do
+ActiveRecord::Schema.define(:version => 20130510170326) do
 
   create_table "funds", :force => true do |t|
-    t.decimal  "balance",     :precision => 8, :scale => 2, :default => 0.0
-    t.string   "type"
-    t.string   "description"
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.decimal  "balance",    :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
+    t.string   "fund_type",                                                 :null => false
+    t.integer  "wallet_id",                                                 :null => false
   end
 
   create_table "offers", :force => true do |t|
