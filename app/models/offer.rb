@@ -1,9 +1,10 @@
 class Offer < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :amount, :fund_type
+  attr_accessible :amount, :fund_type, :rate
 
+  validates_presence_of :user
   validates :amount, numericality: {greater_than: 0}
-  validates :fund_type, presence: true
+  validates :rate, numericality: {greater_than: 0}
   validates :fund_type, inclusion: {in: Fund::FUND_TYPES}
 end

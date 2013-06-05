@@ -11,22 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605093618) do
+ActiveRecord::Schema.define(:version => 20130605111633) do
 
   create_table "funds", :force => true do |t|
-    t.decimal  "balance",    :precision => 8, :scale => 2, :default => 0.0
-    t.datetime "created_at",                                                :null => false
-    t.datetime "updated_at",                                                :null => false
-    t.string   "fund_type",                                                 :null => false
-    t.integer  "wallet_id",                                                 :null => false
+    t.decimal  "balance",    :precision => 18, :scale => 8, :default => 0.0
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+    t.string   "fund_type",                                                  :null => false
+    t.integer  "wallet_id",                                                  :null => false
   end
 
   create_table "offers", :force => true do |t|
-    t.datetime "created_at",                                                :null => false
-    t.datetime "updated_at",                                                :null => false
-    t.integer  "user_id",                                                   :null => false
-    t.string   "fund_type",                                                 :null => false
-    t.decimal  "amount",     :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+    t.integer  "user_id",                                                    :null => false
+    t.string   "fund_type",                                                  :null => false
+    t.decimal  "amount",     :precision => 18, :scale => 8, :default => 0.0
+    t.decimal  "rate",       :precision => 18, :scale => 8, :default => 0.0
   end
 
   create_table "users", :force => true do |t|
