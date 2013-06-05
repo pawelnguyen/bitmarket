@@ -9,12 +9,12 @@ head
 body
   .navbar
     .navbar-inner
-      a.brand
+      = link_to root_path, class: 'brand' do
         | BitCoinMarket 0.0.1
-
       ul.nav
-        li= link_to :wallet, wallet_url
-        li= link_to :offers, offers_url
+        li= link_to 'Wallet', wallet_path
+        li= link_to 'Offers', offers_path
+        li= link_to 'New offer', new_offer_path
       ul.nav.pull-right
         li
           - if user_signed_in?
@@ -22,4 +22,5 @@ body
           - else
             = link_to 'Login', new_user_session_path
   .container
+    = render partial: 'layouts/alerts'
     = yield

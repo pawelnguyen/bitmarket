@@ -1,5 +1,14 @@
-h2 Add new buy offer
-
-
-h2 Add new sell offer
+.well
+  h2 Sell Bitcoins
+  - if @offer.errors.any?
+    #error_explanation
+      ul
+        - @offer.errors.full_messages.each do |msg|
+          li
+            = msg
+  = form_for @offer do |f|
+    = f.hidden_field :fund_type, value: Fund::BITCOINS
+    = f.text_field :amount
+    .clearfix
+    = f.submit 'Add new offer', class: 'btn'
 
